@@ -1,15 +1,19 @@
 
 
-const searchFood = () => {
+const searchFood = async () => {
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
     searchField.value = '';
 
     const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`;
 
-    fetch(url)
-        .then(res => res.json())
-        .then(data => displaySearchResults(data.meals));
+    const res = await fetch(url);
+    const data = await res.json();
+    displaySearchResults(data.meals);
+
+    // fetch(url)
+    //     .then(res => res.json())
+    //     .then(data => displaySearchResults(data.meals));
 }
 
 
@@ -17,15 +21,15 @@ const displaySearchResults = meals => {
     const searchResults = document.getElementById('search-results');
     searchResults.textContent = '';
 
-    if(meals.length == 0){
-        const div = document.createElement('div');
-        div.classList.add('col');
-        div.innerHTML = `
-            <p>No data found based on search keyword</p>
-        `;
+    // if(meals.length == 0){
+    //     const div = document.createElement('div');
+    //     div.classList.add('col');
+    //     div.innerHTML = `
+    //         <p>No data found based on search keyword</p>
+    //     `;
 
-        searchResults.appendChild(div);
-    }
+    //     searchResults.appendChild(div);
+    // }
 
     meals.forEach(meal => {
         // console.log(meal);
@@ -44,15 +48,19 @@ const displaySearchResults = meals => {
     })
 }
 
-const loadMealDetail = mealId =>{
+const loadMealDetail = async mealId =>{
     const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`;
-    fetch(url).then(res => res.json()).then(data => displayMealDetail(data.meals[0]));
+    const res = await fetch(url);
+    const data = await res.json();
+    displayMealDetail(data.meals[0]);
+    // fetch(url).then(res => res.json()).then(data => displayMealDetail(data.meals[0]));
 }
 
 
 const displayMealDetail = meal =>{
     console.log(meal);
     const mealDetail = document.getElementById('meal-details');
+    mealDetail.textContent = '';
     const div = document.createElement('div');
     div.classList.add('card');
     div.innerHTML = `
