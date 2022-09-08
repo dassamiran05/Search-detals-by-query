@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom manipulation example</title>
+</head>
+<body>
+    <h2>Event Delegation</h2>
+    <ul id="ul-container">
+        <li class="item">lorem jack</li>
+        <li class="item">lorem2 mama</li>
+        <li class="item">lorem2 baba</li>
+        <li class="item">lorem2 caba</li>
+        <li class="item">lorem2 daba</li>
+        <li class="item">lorem2 haba</li>
+    </ul>
+    <input type="text" name="field" id="field">
+    <button id="add_li_item" onclick="addLIItem()">Add button</button>
+    <script>
+        const items = document.getElementsByClassName('item');
+        const ul = document.getElementById('ul-container');
+        for(let item of items){
+            item.addEventListener('click', function(event){
+                
+                // ul.removeChild(item);
+                event.target.parentNode.removeChild(event.target);
+                // console.log(event.target);
+            });
+        }
+
+        const addbtn = document.getElementById('add_li_item');
+        
+        function addLIItem(){
+            const input = document.getElementById('field');
+            const li = document.createElement('li');
+            li.innerText = input.value;
+            ul.appendChild(li);
+        }
+        ul.addEventListener('click', function(event){
+            event.target.parentNode.removeChild(event.target);
+        })
+    </script>
+</body>
+</html>

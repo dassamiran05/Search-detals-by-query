@@ -1,0 +1,19 @@
+ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+ul li {
+    padding: 5px 12px;
+}
+
+ul li a {
+    text-decoration: none;
+}
+
+.active {
+    /* color: blue; */
+    background-color: #20BF55;
+    padding: 5px;
+}

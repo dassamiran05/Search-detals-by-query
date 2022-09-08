@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/activeClass.css">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">GAllery</a></li>
+        <li><a href="#">Bingo</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+    <script>
+        // var anchors = document.querySelectorAll('ul a');
+        
+        // console.log(anchors);
+        // for(let i = 0; i<anchors.length;i++){
+            
+        //     anchors[i].onclick = function(){
+        //         const active = document.querySelector('ul a.active');
+        //         if(active){
+        //             active.classList.remove('active');
+        //             this.classList.add('active');
+        //         }
+        //     }
+        // }
+
+        const links = document.querySelectorAll('ul li');
+        // console.log(links);
+        links.forEach(li =>{
+            li.addEventListener('click', () => {
+                resetlinks();
+                li.classList.add('active');
+            })
+        })
+
+        function resetlinks(){
+            links.forEach(li =>{
+                li.classList.remove('active');
+            })
+        }
+    </script>
+</body>
+</html>

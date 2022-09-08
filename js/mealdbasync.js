@@ -53,12 +53,12 @@ const loadMealDetail = async mealId =>{
     const res = await fetch(url);
     const data = await res.json();
     displayMealDetail(data.meals[0]);
+    // console.log(data);
     // fetch(url).then(res => res.json()).then(data => displayMealDetail(data.meals[0]));
 }
 
 
 const displayMealDetail = meal =>{
-    console.log(meal);
     const mealDetail = document.getElementById('meal-details');
     mealDetail.textContent = '';
     const div = document.createElement('div');

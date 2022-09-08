@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products filter page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <style>
+        #products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        #products .image-container img {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .buttons button {
+            margin-right: 10px;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .active {
+            background: violet !important;
+            color: #fff !important;
+            border-color: violet !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="my-3 d-flex justify-content-center">
+        <input type="text" id="search-field" class="form-control w-50" name="search">
+        <button class="btn btn-primary" onclick="getresult()">Seacrh</button>
+    </div>
+    <div class="buttons d-flex justify-content-center mb-4">
+        <button type="button" class="btn btn-danger btn-val" onclick="filterProduct('All')">All</button>
+        <button type="button" class="btn btn-primary btn-val" onclick="filterProduct('Bottomwear')">Bottomwear</button>
+        <button type="button" class="btn btn-secondary btn-val" onclick="filterProduct('T-shirt')">T-shirt</button>
+        <button type="button" class="btn btn-success btn-val" onclick="filterProduct('Clock')">Clock</button>
+
+        <!-- <button type="button" class="btn btn-warning">Warning</button>
+        <button type="button" class="btn btn-info">Info</button>
+        <button type="button" class="btn btn-dark">Dark</button> -->
+    </div>
+
+    <div id="products"></div>
+
+
+    <script src="js/products.js"></script>
+
+</body>
+
+</html>
