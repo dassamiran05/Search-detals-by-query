@@ -12,25 +12,25 @@ let data = [
         image: "images/pants2.jpg"
     },
     {
-        productName: "Shirt1",
+        productName: "Shirts",
         category: "T-shirt",
         price: "90",
         image: "images/shirt1.jpg"
     },
     {
-        productName: "Shirt2",
+        productName: "Shirts",
         category: "T-shirt",
         price: "20",
         image: "images/shirt2.jpg"
     },
     {
-        productName: "Shirt3",
+        productName: "Shirts",
         category: "T-shirt",
         price: "300",
         image: "images/shirt3.jpg"
     },
     {
-        productName: "Shirt4",
+        productName: "Shirts",
         category: "T-shirt",
         price: "120",
         image: "images/shirt4.jpg"
